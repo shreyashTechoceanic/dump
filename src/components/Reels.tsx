@@ -4,12 +4,17 @@ import Video from 'react-native-video';
 import ReelSideBtns from './ReelSideBtns';
 import ReelsDetails from './ReelsDetails';
 
-const Reels = () => {
+interface propType {
+  videoSrc: string;
+  caption: string;
+}
+
+const Reels = ({videoSrc, caption}: propType) => {
   return (
     <View style={styles.container}>
       <Video
         source={{
-          uri: 'https://rr3---sn-qxaelnes.googlevideo.com/videoplayback?expire=1723467460&ei=ZLK5ZrXnB8Dd-LAPz9CrwAc&ip=91.123.10.55&id=o-AL6bFUuz-6m1J2GJipOmcckOeGs9uCHSKgRecPI2n4HU&itag=18&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&vprv=1&svpuc=1&mime=video%2Fmp4&rqh=1&cnr=14&ratebypass=yes&dur=13.769&lmt=1699164418473153&c=ANDROID_TESTSUITE&txp=6300224&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cvprv%2Csvpuc%2Cmime%2Crqh%2Ccnr%2Cratebypass%2Cdur%2Clmt&sig=AJfQdSswRQIgMH387z8rnT-qgdoD0JVXskRFQl3T72Ih9ZNdAWT8FdwCIQDcYaIpYjdykTUnrbvxgp1m_A5yv3FOsdB7hwalaUcJuQ%3D%3D&rm=sn-pmcg-bg0z7d,sn-bg0eez7e&rrc=79,104&req_id=4fafb991240da3ee&cmsv=e&redirect_counter=2&cms_redirect=yes&ipbypass=yes&mh=Sw&mip=103.165.30.236&mm=30&mn=sn-qxaelnes&ms=nxu&mt=1723445069&mv=u&mvi=5&pl=24&lsparams=ipbypass,mh,mip,mm,mn,ms,mv,mvi,pl&lsig=AGtxev0wRgIhALt5kZ0xqZdUDHF272wWh2rzWBpAjDDYFdZcagZ3CKMJAiEAuUHDtps9tuMsU86t60k1jeTv4mS2HKWNouaqABay1g8%3D&ir=1&rr=12',
+          uri: videoSrc,
         }}
         style={styles.backgroundVideo}
         resizeMode="cover"
@@ -31,7 +36,7 @@ const Reels = () => {
         />
       </View>
       <View style={styles.reelsDetailsContainer}>
-        <ReelsDetails />
+        <ReelsDetails caption={caption} />
       </View>
     </View>
   );

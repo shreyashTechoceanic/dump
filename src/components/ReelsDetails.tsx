@@ -1,7 +1,11 @@
 import {StyleSheet, Text, TouchableOpacity, View, Image} from 'react-native';
 import React, {useState} from 'react';
 
-const ReelsDetails = () => {
+type Props = {
+  caption: string;
+};
+
+const ReelsDetails = ({caption}: Props) => {
   const [follow, setFollow] = useState(false);
   const [expanded, setExpanded] = useState(false);
 
@@ -13,7 +17,7 @@ const ReelsDetails = () => {
     setExpanded(!expanded);
   };
 
-  const commentText = 'Hello hi hhc jnczcj kjcsznc and more content here...';
+  const commentText = caption;
   const words = commentText.split(' ');
   const previewText = words.slice(0, 5).join(' ');
   const showMore = words.length > 5;
