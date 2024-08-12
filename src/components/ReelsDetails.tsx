@@ -2,11 +2,22 @@ import {StyleSheet, Text, TouchableOpacity, View, Image} from 'react-native';
 import React, {useState} from 'react';
 
 const ReelsDetails = () => {
-  const [follow, setfollow] = useState(false);
+  const [follow, setFollow] = useState(false);
+  const [expanded, setExpanded] = useState(false);
 
   const onFollow = () => {
-    setfollow(!follow);
+    setFollow(!follow);
   };
+
+  const toggleExpanded = () => {
+    setExpanded(!expanded);
+  };
+
+  const commentText = 'Hello hi hhc jnczcj kjcsznc and more content here...';
+  const words = commentText.split(' ');
+  const previewText = words.slice(0, 5).join(' ');
+  const showMore = words.length > 5;
+
   return (
     <View style={styles.maincontainer}>
       <View style={styles.topbar}>
@@ -22,10 +33,16 @@ const ReelsDetails = () => {
         </TouchableOpacity>
       </View>
       <View style={styles.comment}>
-        <Text style={styles.commentText}>Hello hi hhc jnczcj kjcsznc... </Text>
-        <TouchableOpacity>
-          <Text style={styles.commentText}>more...</Text>
-        </TouchableOpacity>
+        <Text style={styles.commentText}>
+          {expanded ? commentText : previewText + (showMore ? '...' : '')}
+        </Text>
+        {showMore && (
+          <TouchableOpacity onPress={toggleExpanded}>
+            <Text style={styles.commentText}>
+              {expanded ? ' Less' : ' More'}
+            </Text>
+          </TouchableOpacity>
+        )}
       </View>
       <View style={styles.likeBox}>
         <View>
