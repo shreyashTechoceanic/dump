@@ -95,14 +95,14 @@ const OwnStory = ({
               </View>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity onPress={savebtnfunction}>
-            <View style={styles.savebtn}>
+          <View style={styles.savebtn}>
+            <TouchableOpacity onPress={savebtnfunction}>
               <Image
                 source={require('../assets/cross.png')}
                 style={styles.crossImage}
               />
-            </View>
-          </TouchableOpacity>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
       <View style={styles.overlaytwo}>
