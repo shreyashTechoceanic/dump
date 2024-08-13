@@ -9,7 +9,7 @@ import {
   TextInput,
   Text,
 } from 'react-native';
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useRef, useState, useCallback} from 'react';
 
 const {width} = Dimensions.get('window');
 
@@ -35,52 +35,39 @@ const Story = ({
     setLike(!like);
   };
 
+  const handleNextStory = useCallback(() => {
+    if (currentIndex < totalImages - 1) {
+      setCurrentIndex(currentIndex + 1);
+      progressAnim.setValue(0); // Reset animation for the next image
+    } else {
+      progressAnim.setValue(1); // Complete the progress if it's the last image
+    }
+  }, [currentIndex, totalImages, progressAnim]);
+
+  const handlePreviousStory = useCallback(() => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+      progressAnim.setValue(0); // Reset animation for the previous image
+    }
+  }, [currentIndex, progressAnim]);
+
   useEffect(() => {
     const startAnimation = () => {
       Animated.timing(progressAnim, {
         toValue: 1,
-        duration: 10000,
+        duration: 10000 / totalImages, // Adjust duration based on the number of images
         useNativeDriver: false,
-      }).start();
+      }).start(() => {
+        handleNextStory(); // Automatically move to the next image when the animation completes
+      });
     };
 
     startAnimation();
 
-    const intervalId = setInterval(() => {
-      setCurrentIndex(prevIndex => {
-        if (prevIndex + 1 < totalImages) {
-          Animated.timing(progressAnim, {
-            toValue: (prevIndex + 1) / totalImages,
-            duration: 0,
-            useNativeDriver: false,
-          }).start();
-        } else {
-          progressAnim.setValue(0);
-        }
-        return (prevIndex + 1) % totalImages;
-      });
-    }, 15000);
-
-    return () => clearInterval(intervalId);
-  }, [progressAnim, totalImages]);
-
-  const handleNextStory = () => {
-    if (currentIndex < totalImages - 1) {
-      setCurrentIndex(currentIndex + 1);
-      progressAnim.setValue((currentIndex + 1) / totalImages);
-    } else {
-      progressAnim.setValue(0);
-    }
-  };
-
-  const handlePreviousStory = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
-      progressAnim.setValue((currentIndex - 1) / totalImages);
-    } else {
-      progressAnim.setValue(0);
-    }
-  };
+    return () => {
+      progressAnim.stopAnimation(); // Stop animation when the component unmounts
+    };
+  }, [currentIndex, totalImages, handleNextStory, progressAnim]);
 
   return (
     <View style={styles.container}>
@@ -202,10 +189,13 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingHorizontal: 10,
+    zIndex: 10, // Ensures the header is above other elements
   },
   savebtn: {
     width: 24,
     height: 24,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   crossImage: {
     width: '100%',
