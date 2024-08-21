@@ -1,6 +1,6 @@
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React, {useState} from 'react';
-import MusicCoverImg from '../assets/svgs/MusicCoverImg';
+import MusicCoverImg from './MusicCoverImg';
 
 interface reelsSideBtnPropsType {
   likeFun: () => void;

@@ -1,8 +1,8 @@
 /* eslint-disable quotes */
 /* eslint-disable prettier/prettier */
-
-
 // ImageList type declaration
+
+
 type ImageListType = {
   imageId: number;
   lowresolutionImgUrl: string;
@@ -35,7 +35,7 @@ interface Comment {
   id: string;
   text: string;
   username: string;
-  timestamp: string;
+  timestamp: string; 
   profile_picture: string;
 }
 

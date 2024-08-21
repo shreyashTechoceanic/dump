@@ -2,7 +2,7 @@ import {Image, ScrollView, StyleSheet, View} from 'react-native';
 import React from 'react';
 
 interface FlatCardsProps {
-  imagesSrc: string[]; // Array of image URLs
+  imagesSrc: string[];
 }
 
 const FlatCards: React.FC<FlatCardsProps> = ({imagesSrc}) => {
