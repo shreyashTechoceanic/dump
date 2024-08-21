@@ -1,6 +1,6 @@
 import {StyleSheet, View} from 'react-native';
 import React from 'react';
-import Icons from './Icons';
+import Icons from './Icons/Icons';
 
 interface createPreviewProp {
   templateFun: () => void;
