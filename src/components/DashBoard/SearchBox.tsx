@@ -33,8 +33,8 @@ const SearchBox = ({searchFunction}: searchprop) => {
         <Image
           source={
             Platform.OS === 'web'
-              ? {uri: require('../assets/search.png').default}
-              : require('../assets/search.png')
+              ? {uri: require('../../assets/search.png').default}
+              : require('../../assets/search.png')
           }
           style={styles.image}
         />

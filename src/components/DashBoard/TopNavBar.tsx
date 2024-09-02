@@ -13,28 +13,31 @@ const TopNavBar = ({onSearch, onMsg, onBell, onBurger}: navproptype) => {
     <View style={styles.container}>
       <Image
         style={styles.img}
-        source={require('../assets/universe-logo.png')}
+        source={require('../../assets/universe-logo.png')}
       />
       <View style={styles.topnavicon}>
         <TouchableOpacity onPress={onSearch}>
           <Image
             style={styles.search}
-            source={require('../assets/nav-search.png')}
+            source={require('../../assets/nav-search.png')}
           />
         </TouchableOpacity>
 
         <TouchableOpacity onPress={onMsg}>
-          <Image style={styles.msg} source={require('../assets/msg.png')} />
+          <Image style={styles.msg} source={require('../../assets/msg.png')} />
         </TouchableOpacity>
 
         <TouchableOpacity onPress={onBell}>
-          <Image style={styles.bell} source={require('../assets/bell.png')} />
+          <Image
+            style={styles.bell}
+            source={require('../../assets/bell.png')}
+          />
         </TouchableOpacity>
 
         <TouchableOpacity onPress={onBurger}>
           <Image
             style={styles.burger}
-            source={require('../assets/burger-menu.png')}
+            source={require('../../assets/burger-menu.png')}
           />
         </TouchableOpacity>
       </View>

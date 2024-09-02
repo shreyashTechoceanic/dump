@@ -98,7 +98,7 @@ const OwnStory = ({
           <View style={styles.savebtn}>
             <TouchableOpacity onPress={savebtnfunction}>
               <Image
-                source={require('../assets/cross.png')}
+                source={require('../../assets/cross.png')}
                 style={styles.crossImage}
               />
             </TouchableOpacity>

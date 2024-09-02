@@ -28,7 +28,7 @@ const ReelsDetails = ({caption}: Props) => {
         <View style={styles.userbox}>
           <Image
             style={styles.profilepic}
-            source={require('../assets/p1.png')}
+            source={require('../../assets/p1.png')}
           />
           <Text style={styles.username}>shreyashchandra</Text>
         </View>
@@ -50,7 +50,10 @@ const ReelsDetails = ({caption}: Props) => {
       </View>
       <View style={styles.likeBox}>
         <View>
-          <Image style={styles.likedpic} source={require('../assets/p2.png')} />
+          <Image
+            style={styles.likedpic}
+            source={require('../../assets/p2.png')}
+          />
         </View>
         <View>
           <Text style={styles.likedtext}>shreyash & 10 others liked</Text>

@@ -32,8 +32,8 @@ const ReelSideBtns = ({
             style={styles.img}
             source={
               like
-                ? require('../assets/likedbtn.png')
-                : require('../assets/unlikedbtn.png')
+                ? require('../../assets/likedbtn.png')
+                : require('../../assets/unlikedbtn.png')
             }
           />
         </TouchableOpacity>
@@ -43,7 +43,7 @@ const ReelSideBtns = ({
         <TouchableOpacity onPress={commentFun}>
           <Image
             style={styles.img}
-            source={require('../assets/commentbtn.png')}
+            source={require('../../assets/commentbtn.png')}
           />
         </TouchableOpacity>
         <Text style={styles.itemtext}>50K</Text>
@@ -52,7 +52,7 @@ const ReelSideBtns = ({
         <TouchableOpacity onPress={shareFun}>
           <Image
             style={styles.img}
-            source={require('../assets/sharebtn.png')}
+            source={require('../../assets/sharebtn.png')}
           />
         </TouchableOpacity>
         <Text style={styles.itemtext}>50K</Text>
@@ -61,7 +61,7 @@ const ReelSideBtns = ({
         <TouchableOpacity onPress={threedotFun}>
           <Image
             style={[styles.img, styles.dot]}
-            source={require('../assets/verticalthreedot.png')}
+            source={require('../../assets/verticalthreedot.png')}
           />
         </TouchableOpacity>
       </View>

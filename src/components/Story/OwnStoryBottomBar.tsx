@@ -11,7 +11,10 @@ const OwnStoryBottomBar = ({viewscount}: proptype) => {
       <View style={styles.viewBox}>
         <View style={styles.itembox}>
           <TouchableOpacity>
-            <Image style={styles.img} source={require('../assets/views.png')} />
+            <Image
+              style={styles.img}
+              source={require('../../assets/views.png')}
+            />
           </TouchableOpacity>
           <Text style={styles.text}>{viewscount}</Text>
         </View>
@@ -22,25 +25,28 @@ const OwnStoryBottomBar = ({viewscount}: proptype) => {
           <TouchableOpacity>
             <Image
               style={styles.img}
-              source={require('../assets/glimpse.png')}
+              source={require('../../assets/send.png')}
             />
           </TouchableOpacity>
-          <Text style={styles.text}>{viewscount}</Text>
-        </View>
-        <View style={styles.itembox}>
-          <TouchableOpacity>
-            <Image style={styles.img} source={require('../assets/send.png')} />
-          </TouchableOpacity>
-          <Text style={styles.text}>{viewscount} Viewers</Text>
+          <Text style={styles.text}>Share</Text>
         </View>
         <View style={styles.itembox}>
           <TouchableOpacity>
             <Image
               style={styles.img}
-              source={require('../assets/verticalthreedot.png')}
+              source={require('../../assets/glimpse.png')}
             />
           </TouchableOpacity>
-          <Text style={styles.text}>{viewscount}</Text>
+          <Text style={styles.text}>Glimps</Text>
+        </View>
+        <View style={styles.itembox}>
+          <TouchableOpacity>
+            <Image
+              style={styles.img}
+              source={require('../../assets/verticalthreedot.png')}
+            />
+          </TouchableOpacity>
+          <Text style={styles.text}>More</Text>
         </View>
       </View>
     </View>

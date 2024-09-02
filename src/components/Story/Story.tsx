@@ -90,7 +90,7 @@ const Story = ({
           <TouchableOpacity onPress={savebtnfunction}>
             <View style={styles.savebtn}>
               <Image
-                source={require('../assets/cross.png')}
+                source={require('../../assets/cross.png')}
                 style={styles.crossImage}
               />
             </View>
@@ -153,8 +153,8 @@ const Story = ({
           <Image
             source={
               like
-                ? require('../assets/likedbtn.png')
-                : require('../assets/unlikedbtn.png')
+                ? require('../../assets/likedbtn.png')
+                : require('../../assets/unlikedbtn.png')
             }
             style={styles.likeButton}
           />

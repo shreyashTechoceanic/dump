@@ -22,7 +22,7 @@ const SearchHistory = ({searchtext}: searchprop) => {
             <TouchableOpacity>
               <Image
                 style={styles.img}
-                source={require('../assets/searchcross.png')}
+                source={require('../../assets/searchcross.png')}
               />
             </TouchableOpacity>
           </View>
