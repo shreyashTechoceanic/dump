@@ -1,5 +1,6 @@
 import React from 'react';
 import {SafeAreaView, View, StyleSheet} from 'react-native';
+import OuterMessageTopBar from './src/components/Messages/OuterMessageTopBar';
 // import FlatCards from './src/components/FlatCards';
 // import OwnStory from './src/components/Story/OwnStory';
 // import StoryViews from './src/components/Story/StoryViews';
@@ -123,6 +124,7 @@ const App = () => {
           'https://s3-alpha-sig.figma.com/img/edfb/e2c4/7323c52b0c6e356b4685e019b88c51ea?Expires=1724025600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ObnlrPbufelsQwubneQXyLteSthgrKh0450GTT7AOZYA8Or7OXCxUhTV0yTBA2cOT~TppNisFkiICjuLQBEfzUJdlieIk76MulnZFho8wAzGxpQ~ezqPHlzwjyty8-Xqu-htYMC80Y8z0Jt5qNGjLD3M6eQplhv-M1yZrQgnSsic9TJ2n4NvHO9dyjEYmaVg~EiZAIYvwtv0zRPkBU0Ut14NoUt~Jp0xoKZZJVa9Z4NYl6a4YADeuu734r1~E9FKni1umxEPCxkXM4cz9NQGe~5PEMkuvgToWuNU7lj2E959XOKWCLgtjWffy8vW4VJLpn0Tga9zSwqfzSNV31kREA_',
         ]}
       /> */}
+      <OuterMessageTopBar />
     </SafeAreaView>
   );
 };
@@ -130,14 +132,8 @@ const App = () => {
 export default App;
 
 const styles = StyleSheet.create({
-  safeArea: {
-    flex: 1,
-  },
+  safeArea: {},
   mainContainer: {
-    flex: 1,
-    height: '100%',
-    padding: 20,
-
     // backgroundColor: '#000',
   },
 });
