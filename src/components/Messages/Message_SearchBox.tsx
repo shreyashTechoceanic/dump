@@ -32,11 +32,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingVertical: 7, // Reduced vertical padding for a tighter fit
-    paddingHorizontal: 18, // Adjust horizontal padding
-    backgroundColor: '#FAFAFA', // Light gray background
-    borderRadius: 80, // Rounded corners for the search box
-    // maxWidth: 358,
+    paddingVertical: 7,
+    paddingHorizontal: 18,
+    backgroundColor: '#FAFAFA',
+    borderRadius: 80,
     width: '100%',
   },
   textInput: {

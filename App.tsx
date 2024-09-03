@@ -2,6 +2,7 @@ import React from 'react';
 import {SafeAreaView, View, StyleSheet} from 'react-native';
 import OuterMessageTopBar from './src/components/Messages/OuterMessageTopBar';
 import Message_SearchBox from './src/components/Messages/Message_SearchBox';
+import Message_User_Suggestion from './src/components/Messages/Message_User_Suggestion';
 
 const App = () => {
   return (
@@ -10,6 +11,9 @@ const App = () => {
 
       <View style={styles.mainContainer}>
         <Message_SearchBox />
+        <View style={styles.Message_User_Suggestion}>
+          <Message_User_Suggestion />
+        </View>
       </View>
     </SafeAreaView>
   );
@@ -25,7 +29,10 @@ const styles = StyleSheet.create({
   mainContainer: {
     paddingHorizontal: 16,
     paddingTop: 20,
-    alignItems: 'center',
+    // alignItems: 'center',
+  },
+  Message_User_Suggestion: {
+    marginTop: 30,
   },
 });
 
