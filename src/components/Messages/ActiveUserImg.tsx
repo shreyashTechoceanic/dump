@@ -15,7 +15,7 @@ const ActiveUserImg = ({imgSrc, username}: imgProp) => (
             y={0}
             width={56}
             height={56}
-            rx={23}
+            rx={30}
             fill="url(#pattern0_3349_1790)"
           />
           <Path

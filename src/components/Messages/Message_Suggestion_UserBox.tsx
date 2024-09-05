@@ -33,6 +33,6 @@ const styles = StyleSheet.create({
   addBtn: {
     width: 56,
     height: 56,
-    borderRadius: 23,
+    borderRadius: 30,
   },
 });
